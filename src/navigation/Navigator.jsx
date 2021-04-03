@@ -10,11 +10,23 @@ const Stack = createStackNavigator();
 const Navigator = () => {
   
   return(
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={Main} />
+    <Stack.Navigator 
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: '#444a54',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+          fontSize: 25
+        },
+      }}
+    >
+      <Stack.Screen name="Home" component={Main}/>
       <Stack.Screen 
         name="Card page" component={CardScreen} 
         options={({ route }) => ({ title: route.params.param.name })} 
+        
       />
     </Stack.Navigator>
   )
